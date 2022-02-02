@@ -1,4 +1,5 @@
 #pragma once
+#pragma pack(push, 1)
 
 #include<stdint.h>
 #include <stdio.h>
@@ -149,3 +150,5 @@ struct DeauthHdr : DummyHdr, Dot11ExtHdr {
 	void radioInit();
 	void dotInit();
 };
+
+#pragma pack(pop)

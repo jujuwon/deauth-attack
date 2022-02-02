@@ -63,6 +63,7 @@ void run(pcap_t *handle, DeauthHdr *deauth) {
     if(unicast) {
         dest = std::string(deauth->addr1_);
         if(authentication) {
+            dest = std::string(deauth->addr2_);
             type = "Auth";
         }
     }
@@ -74,10 +75,9 @@ void run(pcap_t *handle, DeauthHdr *deauth) {
             }
             time_t curTime = time(NULL);
             struct tm *pLocal = localtime(&curTime);
-            std::cout << 
             printf("%02d:%02d:%02d Sending %s to %s -- BSSID: [%s]\n",
                     pLocal->tm_hour, pLocal->tm_min, pLocal->tm_sec, type.c_str(), dest.c_str(), bssid.c_str());
-            usleep(500000);
+            usleep(5000);
         }
 }
 
