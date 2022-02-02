@@ -77,7 +77,7 @@ void run(pcap_t *handle, DeauthHdr *deauth) {
             struct tm *pLocal = localtime(&curTime);
             printf("%02d:%02d:%02d Sending %s to %s -- BSSID: [%s]\n",
                     pLocal->tm_hour, pLocal->tm_min, pLocal->tm_sec, type.c_str(), dest.c_str(), bssid.c_str());
-            usleep(5000);
+            usleep(500000);
         }
 }
 
